@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 2: Vet Clinic Directory - PetCare360</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       1. HEADER & NAVIGATION BAR
+  ======================================================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="1-dashboard.html" class="nav-logo">
+        <div class="logo-badge">🐾</div>
+        <span>PetCare<strong>360</strong></span>
+      </a>
+
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="1-dashboard.html">🏠 Dashboard</a></li>
+        <li class="nav-item"><a href="2-clinics.html" class="active">🏥 Vet Clinics</a></li>
+        <li class="nav-item"><a href="3-pets.html">🐶 Pet Profiles <span class="badge-pill">4</span></a></li>
+        <li class="nav-item"><a href="4-appointments.html">📅 Appointments <span class="badge-pill badge-amber">4 Due</span></a></li>
+        <li class="nav-item"><a href="5-ai-insights.html">✨ AI Insights</a></li>
+      </ul>
+
+      <div style="display: flex; gap: 0.5rem;">
+        <a href="4-appointments.html" class="btn btn-primary">Book Visit</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       2. PAGE TITLE & FILTERS (Task 3: Search & Filters)
+  ======================================================== -->
+  <main class="container" style="padding-top: 2rem;">
+
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">🏥 Veterinary Clinic Directory</h1>
+        <p class="section-sub">Find accredited veterinary hospitals, filter by medical specialty and location, and book available consultation slots.</p>
+      </div>
+    </div>
+
+    <!-- Filter & Search Controls -->
+    <div class="filter-bar">
+      <!-- Search Box -->
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-input" 
+        placeholder="🔍 Search by clinic name or doctor..."
+        onkeyup="filterClinics()"
+      >
+
+      <!-- Specialty Dropdown -->
+      <select id="specialtySelect" class="filter-select" onchange="filterClinics()">
+        <option value="all">Specialty: All Categories</option>
+        <option value="Emergency">Emergency 24/7</option>
+        <option value="Surgery">Surgery</option>
+        <option value="Dentistry">Dentistry</option>
+        <option value="Dermatology">Dermatology</option>
+        <option value="Exotics">Exotic Pets</option>
+      </select>
+
+      <!-- Location Dropdown -->
+      <select id="locationSelect" class="filter-select" onchange="filterClinics()">
+        <option value="all">Location: All Cities</option>
+        <option value="Downtown">Downtown Metro</option>
+        <option value="Westside">Westside Heights</option>
+        <option value="North">North Suburbs</option>
+        <option value="Oakwood">Oakwood Park</option>
+      </select>
+    </div>
+
+    <!-- ========================================================
+         3. CLINICS LIST
+    ======================================================== -->
+    <div id="clinicsList" style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+      <!-- Clinic 1 -->
+      <div class="card clinic-card" data-specialty="Emergency Surgery" data-location="Downtown">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="tag tag-red">Premier Emergency Center</span>
+            <span class="tag tag-yellow">⭐ 4.9 (342 reviews)</span>
+            <h2 style="margin: 0.4rem 0;">Metropolitan Veterinary Hospital & 24/7 ER</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">📍 452 Grand Boulevard, Suite 100, Downtown Metro</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">👨‍⚕️ Lead Clinician: <strong>Dr. Sarah Mitchell, DVM, DACVECC</strong></p>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">🕒 Open: <strong>24 Hours / 7 Days</strong> &bull; 📞 Phone: <strong>(555) 234-8900</strong></p>
+          </div>
+
+          <div style="text-align: right;">
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Consultation Fee</div>
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">$75</div>
+          </div>
+        </div>
+
+        <div style="margin: 1rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="tag tag-teal">Emergency</span>
+          <span class="tag tag-teal">Surgery</span>
+          <span class="tag tag-teal">Cardiology</span>
+          <span class="tag tag-blue">24/7 ICU & Oxygen</span>
+          <span class="tag tag-blue">In-House Lab</span>
+        </div>
+
+        <!-- Available Slots -->
+        <div style="background: var(--bg-body); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+          <strong style="font-size: 0.85rem; display: block; margin-bottom: 0.5rem;">Available Today Slots:</strong>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="4-appointments.html" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">⏰ 09:00 AM</a>
+            <a href="4-appointments.html" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">⏰ 10:30 AM</a>
+            <a href="4-appointments.html" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">⏰ 01:15 PM</a>
+            <a href="4-appointments.html" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">⏰ 03:45 PM</a>
+            <a href="4-appointments.html" class="btn btn-primary" style="margin-left: auto;">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinic 2 -->
+      <div class="card clinic-card" data-specialty="Dermatology Dentistry" data-location="Westside">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="tag tag-teal">Fear-Free Certified</span>
+            <span class="tag tag-yellow">⭐ 4.8 (219 reviews)</span>
+            <h2 style="margin: 0.4rem 0;">Paws & Whiskers Holistic Wellness Center</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">📍 882 Evergreen Terrace, Westside Heights</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">👨‍⚕️ Lead Clinician: <strong>Dr. Julian Ross, DVM, CVA</strong></p>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">🕒 Open: <strong>Mon - Sat: 8:00 AM - 6:30 PM</strong> &bull; 📞 Phone: <strong>(555) 891-3421</strong></p>
+          </div>
+
+          <div style="text-align: right;">
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Consultation Fee</div>
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">$65</div>
+          </div>
+        </div>
+
+        <div style="margin: 1rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="tag tag-teal">General Practice</span>
+          <span class="tag tag-teal">Dermatology</span>
+          <span class="tag tag-teal">Dentistry</span>
+          <span class="tag tag-blue">Low-Stress Feline Rooms</span>
+          <span class="tag tag-blue">Laser Therapy</span>
+        </div>
+
+        <div style="background: var(--bg-body); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+          <strong style="font-size: 0.85rem; display: block; margin-bottom: 0.5rem;">Available Today Slots:</strong>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="4-appointments.html" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">⏰ 09:30 AM</a>
+            <a href="4-appointments.html" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">⏰ 11:00 AM</a>
+            <a href="4-appointments.html" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">⏰ 02:00 PM</a>
+            <a href="4-appointments.html" class="btn btn-primary" style="margin-left: auto;">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinic 3 -->
+      <div class="card clinic-card" data-specialty="Exotics Surgery" data-location="North">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="tag tag-blue">Specialist Avian & Exotic Facility</span>
+            <span class="tag tag-yellow">⭐ 4.95 (184 reviews)</span>
+            <h2 style="margin: 0.4rem 0;">Advanced Avian & Exotic Animal Clinic</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">📍 312 Falcon Ridge Road, North Suburbs</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">👨‍⚕️ Lead Clinician: <strong>Dr. Kimberly Vance, MS, DVM (Exotics)</strong></p>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">🕒 Open: <strong>Mon - Fri: 8:30 AM - 5:30 PM</strong> &bull; 📞 Phone: <strong>(555) 672-9988</strong></p>
+          </div>
+
+          <div style="text-align: right;">
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Consultation Fee</div>
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">$85</div>
+          </div>
+        </div>
+
+        <div style="margin: 1rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="tag tag-teal">Exotic Pets</span>
+          <span class="tag tag-teal">Avian Surgery</span>
+          <span class="tag tag-blue">Avian Incubators</span>
+          <span class="tag tag-blue">Microsurgery</span>
+        </div>
+
+        <div style="background: var(--bg-body); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+          <strong style="font-size: 0.85rem; display: block; margin-bottom: 0.5rem;">Available Today Slots:</strong>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="4-appointments.html" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">⏰ 10:00 AM</a>
+            <a href="4-appointments.html" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">⏰ 01:30 PM</a>
+            <a href="4-appointments.html" class="btn btn-primary" style="margin-left: auto;">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="text-align: center; font-size: 0.85rem; color: #64748b;">
+      &copy; 2026 PetCare360 Platform. All clinics are verified and licensed.
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       EASY JAVASCRIPT FOR SEARCH & FILTERING
+  ======================================================== -->
+  <script>
+    function filterClinics() {
+      // 1. Get input values
+      var search = document.getElementById("searchInput").value.toLowerCase();
+      var specialty = document.getElementById("specialtySelect").value.toLowerCase();
+      var location = document.getElementById("locationSelect").value.toLowerCase();
+
+      // 2. Loop through all clinic cards
+      var cards = document.getElementsByClassName("clinic-card");
+      for (var i = 0; i < cards.length; i++) {
+        var card = cards[i];
+        var text = card.innerText.toLowerCase();
+        var cardSpecialty = card.getAttribute("data-specialty").toLowerCase();
+        var cardLocation = card.getAttribute("data-location").toLowerCase();
+
+        // 3. Check match conditions
+        var matchSearch = text.includes(search);
+        var matchSpecialty = (specialty === "all" || cardSpecialty.includes(specialty));
+        var matchLocation = (location === "all" || cardLocation.includes(location));
+
+        // 4. Show or hide
+        if (matchSearch && matchSpecialty && matchLocation) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

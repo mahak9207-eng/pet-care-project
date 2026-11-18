@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 4: Appointments & Care Reminders - PetCare360</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       1. HEADER & NAVIGATION BAR
+  ======================================================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="1-dashboard.html" class="nav-logo">
+        <div class="logo-badge">🐾</div>
+        <span>PetCare<strong>360</strong></span>
+      </a>
+
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="1-dashboard.html">🏠 Dashboard</a></li>
+        <li class="nav-item"><a href="2-clinics.html">🏥 Vet Clinics</a></li>
+        <li class="nav-item"><a href="3-pets.html">🐶 Pet Profiles <span class="badge-pill">4</span></a></li>
+        <li class="nav-item"><a href="4-appointments.html" class="active">📅 Appointments <span class="badge-pill badge-amber">4 Due</span></a></li>
+        <li class="nav-item"><a href="5-ai-insights.html">✨ AI Insights</a></li>
+      </ul>
+
+      <div style="display: flex; gap: 0.5rem;">
+        <button class="btn btn-primary" onclick="switchTab('book')">+ Book New Visit</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       2. PAGE TITLE & WORKFLOW TABS
+  ======================================================== -->
+  <main class="container" style="padding-top: 2rem;">
+
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">📅 Appointments, Reminders & Care Diary</h1>
+        <p class="section-sub">Schedule veterinary visits, track prioritized preventive care reminders, and review historical visit logs.</p>
+      </div>
+    </div>
+
+    <!-- Workflow Tabs -->
+    <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; flex-wrap: wrap;">
+      <button id="tabBtn1" class="btn btn-primary app-tab-btn" onclick="switchTab('upcoming')">Upcoming Visits (2)</button>
+      <button id="tabBtn2" class="btn btn-secondary app-tab-btn" onclick="switchTab('reminders')">⏰ Care Reminders (4 Due)</button>
+      <button id="tabBtn3" class="btn btn-secondary app-tab-btn" onclick="switchTab('book')">➕ Book Appointment</button>
+      <button id="tabBtn4" class="btn btn-secondary app-tab-btn" onclick="switchTab('diary')">📖 Pet-Care Diary</button>
+    </div>
+
+    <!-- ========================================================
+         TAB 1: UPCOMING VISITS
+    ======================================================== -->
+    <div id="tabUpcoming" class="tab-content" style="display: block;">
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+
+        <!-- Visit 1 -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <span class="tag tag-green">Confirmed Booking</span>
+              <span style="font-size: 0.8rem; color: #64748b; margin-left: 0.5rem; font-family: monospace;">Ref #PET-2026-8812</span>
+              <h2 style="margin: 0.35rem 0;">Core Vaccine Booster (DHPP & Bordetella)</h2>
+              <p style="color: var(--primary); font-weight: 700;">Patient: Luna (Golden Retriever)</p>
+            </div>
+            <button class="btn btn-secondary" onclick="alert('Booking canceled.')" style="color: #ef4444;">Cancel Visit</button>
+          </div>
+
+          <div class="grid-3" style="background: var(--bg-body); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+            <div>
+              <small style="color: var(--text-muted); font-weight: 700;">DATE & TIME</small>
+              <div style="font-weight: 600; margin-top: 2px;">📅 2026-02-18 at 10:30 AM</div>
+            </div>
+            <div>
+              <small style="color: var(--text-muted); font-weight: 700;">CLINIC FACILITY</small>
+              <div style="font-weight: 600; margin-top: 2px;">🏥 Metropolitan Veterinary Hospital</div>
+            </div>
+            <div>
+              <small style="color: var(--text-muted); font-weight: 700;">DOCTOR</small>
+              <div style="font-weight: 600; margin-top: 2px;">👨‍⚕️ Dr. Sarah Mitchell</div>
+            </div>
+          </div>
+
+          <p style="font-size: 0.85rem; color: var(--text-muted);"><strong>Visit Notes:</strong> Please inspect mild dry skin patch near right shoulder blade.</p>
+        </div>
+
+        <!-- Visit 2 -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <span class="tag tag-green">Confirmed Booking</span>
+              <span style="font-size: 0.8rem; color: #64748b; margin-left: 0.5rem; font-family: monospace;">Ref #PET-2026-7491</span>
+              <h2 style="margin: 0.35rem 0;">Comprehensive Dental Scale & Polish</h2>
+              <p style="color: var(--primary); font-weight: 700;">Patient: Bella (French Bulldog)</p>
+            </div>
+            <button class="btn btn-secondary" onclick="alert('Booking canceled.')" style="color: #ef4444;">Cancel Visit</button>
+          </div>
+
+          <div class="grid-3" style="background: var(--bg-body); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+            <div>
+              <small style="color: var(--text-muted); font-weight: 700;">DATE & TIME</small>
+              <div style="font-weight: 600; margin-top: 2px;">📅 2026-03-05 at 08:30 AM</div>
+            </div>
+            <div>
+              <small style="color: var(--text-muted); font-weight: 700;">CLINIC FACILITY</small>
+              <div style="font-weight: 600; margin-top: 2px;">🏥 Oakwood Animal Dental & Surgical</div>
+            </div>
+            <div>
+              <small style="color: var(--text-muted); font-weight: 700;">DOCTOR</small>
+              <div style="font-weight: 600; margin-top: 2px;">👨‍⚕️ Dr. Emily Chen</div>
+            </div>
+          </div>
+
+          <p style="font-size: 0.85rem; color: var(--text-muted);"><strong>Visit Notes:</strong> Pre-anesthetic blood panel completed. Fast after midnight before visit.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================================
+         TAB 2: CARE REMINDERS (Interactive Checkboxes)
+    ======================================================== -->
+    <div id="tabReminders" class="tab-content" style="display: none;">
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+
+        <!-- Reminder 1 -->
+        <div class="card" style="display: flex; align-items: center; gap: 1rem; border-left: 4px solid var(--danger);">
+          <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer;">
+          <div style="flex: 1;">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <strong>DHPP & Bordetella Vaccination Due</strong>
+              <span class="tag tag-red">High Priority</span>
+              <span class="tag tag-teal">Vaccine</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Target: <strong>Luna (Dog)</strong> &bull; Upcoming appointment confirmed at Metro Vet.</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.75rem; color: #64748b;">Due Date</div>
+            <div style="font-weight: 700; color: #ef4444;">2026-02-18</div>
+          </div>
+        </div>
+
+        <!-- Reminder 2 -->
+        <div class="card" style="display: flex; align-items: center; gap: 1rem; border-left: 4px solid var(--primary);">
+          <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer;">
+          <div style="flex: 1;">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <strong>Monthly Heartworm Chew (Simparica Trio)</strong>
+              <span class="tag tag-teal">Medication</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Target: <strong>Luna (Dog)</strong> &bull; Administer with evening food bowl.</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.75rem; color: #64748b;">Due Date</div>
+            <div style="font-weight: 700;">2026-02-25</div>
+          </div>
+        </div>
+
+        <!-- Reminder 3 -->
+        <div class="card" style="display: flex; align-items: center; gap: 1rem; border-left: 4px solid #f59e0b;">
+          <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer;">
+          <div style="flex: 1;">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <strong>Avian UVB Lamp Bulb Replacement</strong>
+              <span class="tag tag-yellow">Habitat Lighting</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Target: <strong>Kiwi (Cockatiel)</strong> &bull; UVB output degrades after 6 months of daily use.</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.75rem; color: #64748b;">Due Date</div>
+            <div style="font-weight: 700;">2026-03-15</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================================
+         TAB 3: BOOK DEMONSTRATION APPOINTMENT FORM (Req 4)
+    ======================================================== -->
+    <div id="tabBook" class="tab-content" style="display: none;">
+      <div class="card" style="max-width: 650px; margin: 0 auto; padding: 2rem;">
+        <h2 style="margin-bottom: 0.5rem;">📅 Book Demonstration Appointment</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Select your pet, choose a clinic and time slot to confirm your appointment.</p>
+
+        <form onsubmit="handleBookDemo(event)">
+          <div class="form-group">
+            <label class="form-label">Patient Pet *</label>
+            <select class="form-control">
+              <option>Luna (Dog - Golden Retriever)</option>
+              <option>Milo (Cat - British Shorthair)</option>
+              <option>Kiwi (Bird - Cockatiel)</option>
+              <option>Bella (Dog - French Bulldog)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Veterinary Clinic *</label>
+            <select class="form-control">
+              <option>Metropolitan Veterinary Hospital & 24/7 ER (Downtown)</option>
+              <option>Paws & Whiskers Holistic Center (Westside)</option>
+              <option>Advanced Avian & Exotic Animal Clinic (North Suburbs)</option>
+              <option>Oakwood Animal Dental & Surgical Suites</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Preferred Date *</label>
+              <input type="date" class="form-control" value="2026-02-20" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Available Slot *</label>
+              <select class="form-control">
+                <option>09:00 AM</option>
+                <option>10:30 AM (Popular)</option>
+                <option>01:15 PM</option>
+                <option>03:45 PM</option>
+                <option>05:30 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Service Type</label>
+            <select class="form-control">
+              <option>Core Vaccination & Wellness Physical</option>
+              <option>Dental Scaling & Polishing</option>
+              <option>Dermatology / Skin Allergy Consultation</option>
+              <option>Emergency Triage / Urgent Illness</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Notes for Attending Veterinarian</label>
+            <textarea class="form-control" rows="3" placeholder="Describe symptoms or reasons for consultation..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 0.75rem;">
+            Confirm & Save Appointment
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         TAB 4: PET-CARE DIARY & VISIT LOGS
+    ======================================================== -->
+    <div id="tabDiary" class="tab-content" style="display: none;">
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span class="tag tag-green">Completed Visit</span>
+            <span style="font-size: 0.8rem; color: #64748b;">Visit Date: 2025-09-10</span>
+          </div>
+          <h3 style="margin-bottom: 0.35rem;">Annual Physical & Parasite Screen</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Patient: <strong>Milo (Cat)</strong> &bull; Facility: <strong>Paws & Whiskers Holistic Wellness</strong> (Dr. Julian Ross)
+          </p>
+          <div style="background: var(--bg-body); padding: 0.75rem 1rem; border-radius: 8px; margin: 0.75rem 0; font-size: 0.85rem;">
+            <span>Weight: 5.2 kg &bull; Temp: 100.8 °F &bull; Heart Rate: 150 bpm</span>
+          </div>
+          <p style="font-size: 0.9rem;"><strong>Doctor Notes:</strong> Abdomen soft and non-painful. Bladder palpation healthy. Urine specific gravity within optimal range.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="text-align: center; font-size: 0.85rem; color: #64748b;">
+      &copy; 2026 PetCare360 Platform. All appointments are digitally confirmed.
+    </div>
+  </footer>
+
+  <!-- Easy JavaScript for Tab Switching & Booking -->
+  <script>
+    function switchTab(tabName) {
+      // 1. Hide all tab contents
+      document.getElementById("tabUpcoming").style.display = "none";
+      document.getElementById("tabReminders").style.display = "none";
+      document.getElementById("tabBook").style.display = "none";
+      document.getElementById("tabDiary").style.display = "none";
+
+      // 2. Reset buttons style
+      var btns = document.getElementsByClassName("app-tab-btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].className = "btn btn-secondary app-tab-btn";
+      }
+
+      // 3. Show target tab
+      if (tabName === "upcoming") {
+        document.getElementById("tabUpcoming").style.display = "block";
+        document.getElementById("tabBtn1").className = "btn btn-primary app-tab-btn";
+      } else if (tabName === "reminders") {
+        document.getElementById("tabReminders").style.display = "block";
+        document.getElementById("tabBtn2").className = "btn btn-primary app-tab-btn";
+      } else if (tabName === "book") {
+        document.getElementById("tabBook").style.display = "block";
+        document.getElementById("tabBtn3").className = "btn btn-primary app-tab-btn";
+      } else if (tabName === "diary") {
+        document.getElementById("tabDiary").style.display = "block";
+        document.getElementById("tabBtn4").className = "btn btn-primary app-tab-btn";
+      }
+    }
+
+    function handleBookDemo(e) {
+      e.preventDefault();
+      var code = "PET-2026-" + Math.floor(1000 + Math.random() * 9000);
+      alert("Success! Your demonstration appointment is confirmed.\nBooking Reference: " + code);
+      switchTab("upcoming");
+    }
+  </script>
+
+</body>
+</html>

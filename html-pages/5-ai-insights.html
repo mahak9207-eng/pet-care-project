@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 5: AI Pet Care Insights - PetCare360</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       1. HEADER & NAVIGATION BAR
+  ======================================================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="1-dashboard.html" class="nav-logo">
+        <div class="logo-badge">🐾</div>
+        <span>PetCare<strong>360</strong></span>
+      </a>
+
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="1-dashboard.html">🏠 Dashboard</a></li>
+        <li class="nav-item"><a href="2-clinics.html">🏥 Vet Clinics</a></li>
+        <li class="nav-item"><a href="3-pets.html">🐶 Pet Profiles <span class="badge-pill">4</span></a></li>
+        <li class="nav-item"><a href="4-appointments.html">📅 Appointments <span class="badge-pill badge-amber">4 Due</span></a></li>
+        <li class="nav-item"><a href="5-ai-insights.html" class="active">✨ AI Insights</a></li>
+      </ul>
+
+      <div style="display: flex; gap: 0.5rem;">
+        <a href="4-appointments.html" class="btn btn-primary">Book Visit</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       2. PAGE TITLE & NON-DIAGNOSTIC NOTICE
+  ======================================================== -->
+  <main class="container" style="padding-top: 2rem;">
+
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">✨ AI Pet Care Insights & Analytics</h1>
+        <p class="section-sub">Smart behavioral synthesis, age-tailored daily routines, and 5 veterinary analytics displays.</p>
+      </div>
+
+      <!-- Pet Selector Dropdown -->
+      <div>
+        <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-right: 0.5rem;">Analyze Pet:</label>
+        <select id="petSelect" class="filter-select" onchange="updateAiPet()" style="font-weight: 700; border-color: var(--primary);">
+          <option value="luna">Luna (Dog &bull; 3.5 yrs)</option>
+          <option value="milo">Milo (Cat &bull; 2.0 yrs)</option>
+          <option value="bella">Bella (Dog &bull; Senior 5.0 yrs)</option>
+          <option value="kiwi">Kiwi (Bird &bull; 1.5 yrs)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Non-Diagnostic Disclaimer Banner -->
+    <div style="background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; padding: 0.85rem 1.25rem; border-radius: 10px; margin-bottom: 2rem; font-size: 0.875rem;">
+      🛡️ <strong>Non-Diagnostic Care Notice:</strong> AI suggestions are synthesized from mock pet age, species biological guidelines, and logged care habits. They organize wellness routines and are not medical prescriptions.
+    </div>
+
+    <!-- ========================================================
+         SECTION A: AI ROUTINE OPTIMIZER (Task 5)
+    ======================================================== -->
+    <div class="card" style="border: 2px solid #ccfbf1; margin-bottom: 2.5rem; padding: 2rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+          <span class="tag tag-teal">Life Stage: Adult Canine</span>
+          <h2 id="aiPetTitle" style="margin-top: 0.35rem;">AI Wellness Routine for Luna</h2>
+          <p id="aiPetSubtitle" style="color: var(--text-muted); font-size: 0.9rem;">Golden Retriever &bull; Weight: 29.5 kg &bull; Active Lifestyle</p>
+        </div>
+
+        <div style="background: var(--bg-body); padding: 0.75rem 1.25rem; border-radius: 12px; text-align: center;">
+          <small style="color: var(--text-muted); font-weight: 700;">WELLNESS SCORE</small>
+          <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary);">94 / 100</div>
+        </div>
+      </div>
+
+      <!-- Algorithmic Suggestions Grid -->
+      <h3 style="margin-bottom: 0.75rem; font-size: 1.1rem;">⚡ AI Algorithmic Suggestions</h3>
+      <div class="grid-2" style="margin-bottom: 1.5rem;">
+        <div style="background: var(--bg-body); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--primary);">
+          <span class="tag tag-teal">Dental Hygiene</span>
+          <strong style="display: block; margin: 0.25rem 0;">Plaque Disruption & Enzymatic Chews</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Over 80% of canines show gingivitis by age 3. Implementing 3x weekly enzymatic teeth brushing delays invasive extractions.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-body); padding: 1rem; border-radius: 10px; border-left: 4px solid var(--danger);">
+          <span class="tag tag-red">Allergy Safeguard</span>
+          <strong style="display: block; margin: 0.25rem 0;">Ingredient Safeguard: Chicken Protein</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Audit all training treats, soft biscuits, and grooming shampoos to prevent chicken byproduct cross-contamination.
+          </p>
+        </div>
+      </div>
+
+      <!-- Optimal Daily Schedule Timeline -->
+      <h3 style="margin-bottom: 0.75rem; font-size: 1.1rem;">⏰ Optimal Suggested Daily Care Schedule</h3>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <div style="display: flex; gap: 1rem; padding: 0.65rem 1rem; background: var(--bg-body); border-radius: 8px; font-size: 0.85rem;">
+          <strong style="color: var(--primary); min-width: 80px;">07:30 AM</strong>
+          <strong>Nutritional Morning Feeding:</strong>
+          <span style="color: var(--text-muted);">1.25 cups salmon formula with fresh filtered water bowl refill</span>
+        </div>
+        <div style="display: flex; gap: 1rem; padding: 0.65rem 1rem; background: var(--bg-body); border-radius: 8px; font-size: 0.85rem;">
+          <strong style="color: var(--primary); min-width: 80px;">08:30 AM</strong>
+          <strong>Dedicated Exercise & Play:</strong>
+          <span style="color: var(--text-muted);">45 mins brisk walk and fetch ball retrieval in dog park</span>
+        </div>
+        <div style="display: flex; gap: 1rem; padding: 0.65rem 1rem; background: var(--bg-body); border-radius: 8px; font-size: 0.85rem;">
+          <strong style="color: var(--primary); min-width: 80px;">06:30 PM</strong>
+          <strong>Evening Meal & Preventative:</strong>
+          <span style="color: var(--text-muted);">Evening meal portion + monthly Simparica Trio parasite chew</span>
+        </div>
+        <div style="display: flex; gap: 1rem; padding: 0.65rem 1rem; background: var(--bg-body); border-radius: 8px; font-size: 0.85rem;">
+          <strong style="color: var(--primary); min-width: 80px;">08:30 PM</strong>
+          <strong>Grooming & Skin Inspection:</strong>
+          <span style="color: var(--text-muted);">Quick undercoat brushing & ear canal moisture inspection</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         SECTION B: 5 CORE AI DATA DISPLAYS (Requirements)
+    ======================================================== -->
+    <h2 style="font-size: 1.6rem; margin-bottom: 1.5rem;">📊 Veterinary & Care Data Displays (5)</h2>
+
+    <!-- DISPLAY 5: PET CARE ACTIVITY SUMMARIES -->
+    <div style="margin-bottom: 2rem;">
+      <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Display 5: Pet Care Activity Summaries</h3>
+      <div class="grid-4">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #10b981;">92%</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Household Wellness Index</div>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #3b82f6;">96%</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Medication Adherence</div>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #f59e0b;">24.8 mi</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Avg. Weekly Canine Activity</div>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #ec4899;">58</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Care Tasks Logged (Month)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 2rem;">
+      <!-- DISPLAY 1: POPULAR VETERINARY SERVICES -->
+      <div class="card">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Display 1: Popular Veterinary Services</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Based on 4,180 aggregated clinical consultations</p>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span>Wellness & Preventive Exams</span>
+            <strong>34% (1,420 visits)</strong>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width: 34%; background: #10b981;"></div></div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-top: 0.75rem;">
+            <span>Core Vaccines & Boosters</span>
+            <strong>26% (1,088 visits)</strong>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width: 26%; background: #3b82f6;"></div></div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-top: 0.75rem;">
+            <span>Dental Scaling & Surgery</span>
+            <strong>18% (752 visits)</strong>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width: 18%; background: #8b5cf6;"></div></div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-top: 0.75rem;">
+            <span>Dermatology & Allergy Relief</span>
+            <strong>13% (544 visits)</strong>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width: 13%; background: #f59e0b;"></div></div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-top: 0.75rem;">
+            <span>Emergency & Urgent Triage</span>
+            <strong>9% (376 visits)</strong>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width: 9%; background: #ef4444;"></div></div>
+        </div>
+      </div>
+
+      <!-- DISPLAY 2: PREFERRED CLINICS -->
+      <div class="card">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Display 2: Preferred Partner Clinics</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Owner satisfaction & loyalty rankings</p>
+
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <div style="padding: 0.75rem; background: var(--bg-body); border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between;">
+              <strong>Metropolitan Veterinary Hospital</strong>
+              <span class="tag tag-teal">36% Share</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
+              Satisfaction: ⭐ 4.9 &bull; Turnaround: &lt; 25 mins &bull; 24/7 ICU & Specialist Staff
+            </p>
+          </div>
+
+          <div style="padding: 0.75rem; background: var(--bg-body); border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between;">
+              <strong>Paws & Whiskers Holistic Center</strong>
+              <span class="tag tag-teal">25% Share</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
+              Satisfaction: ⭐ 4.8 &bull; Low Stress &bull; Fear-Free Certified Cat Rooms
+            </p>
+          </div>
+
+          <div style="padding: 0.75rem; background: var(--bg-body); border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between;">
+              <strong>Oakwood Animal Dental & Surgical</strong>
+              <span class="tag tag-teal">21% Share</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
+              Satisfaction: ⭐ 4.75 &bull; Advanced Dental Digital Sensors & Anesthesia
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- DISPLAY 3: APPOINTMENT PATTERNS -->
+      <div class="card">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Display 3: Appointment Booking Patterns</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Weekly day-by-day booking distribution</p>
+
+        <!-- Simple visual bar chart -->
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; height: 140px; background: var(--bg-body); padding: 1rem; border-radius: 8px;">
+          <div style="text-align: center; flex: 1;">
+            <small style="font-weight: 700; color: var(--primary);">63</small>
+            <div style="width: 24px; height: 60px; background: var(--primary); margin: 0 auto; border-radius: 4px 4px 0 0;"></div>
+            <small style="color: var(--text-muted);">Mon</small>
+          </div>
+          <div style="text-align: center; flex: 1;">
+            <small style="font-weight: 700; color: var(--primary);">52</small>
+            <div style="width: 24px; height: 50px; background: var(--primary); margin: 0 auto; border-radius: 4px 4px 0 0;"></div>
+            <small style="color: var(--text-muted);">Tue</small>
+          </div>
+          <div style="text-align: center; flex: 1;">
+            <small style="font-weight: 700; color: var(--primary);">57</small>
+            <div style="width: 24px; height: 55px; background: var(--primary); margin: 0 auto; border-radius: 4px 4px 0 0;"></div>
+            <small style="color: var(--text-muted);">Wed</small>
+          </div>
+          <div style="text-align: center; flex: 1;">
+            <small style="font-weight: 700; color: var(--primary);">58</small>
+            <div style="width: 24px; height: 56px; background: var(--primary); margin: 0 auto; border-radius: 4px 4px 0 0;"></div>
+            <small style="color: var(--text-muted);">Thu</small>
+          </div>
+          <div style="text-align: center; flex: 1;">
+            <small style="font-weight: 700; color: var(--primary); font-size: 0.9rem;">80</small>
+            <div style="width: 24px; height: 80px; background: #0f766e; margin: 0 auto; border-radius: 4px 4px 0 0;"></div>
+            <small style="font-weight: 700; color: var(--text-main);">Fri</small>
+          </div>
+          <div style="text-align: center; flex: 1;">
+            <small style="font-weight: 700; color: var(--primary); font-size: 0.9rem;">93</small>
+            <div style="width: 24px; height: 95px; background: #042f2e; margin: 0 auto; border-radius: 4px 4px 0 0;"></div>
+            <small style="font-weight: 700; color: var(--text-main);">Sat</small>
+          </div>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Peak Hours: Friday 4:00 PM & Saturday 10:00 AM - 2:00 PM</p>
+      </div>
+
+      <!-- DISPLAY 4: UPCOMING ROUTINE CARE REMINDERS -->
+      <div class="card">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Display 4: Upcoming Routine Care Reminders</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Algorithmic timeline for proactive wellness</p>
+
+        <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+          <div style="display: flex; justify-content: space-between; padding: 0.65rem 0.85rem; background: var(--bg-body); border-radius: 8px; font-size: 0.85rem;">
+            <div>
+              <strong>DHPP & Bordetella Booster</strong> - Luna (Dog)
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Vaccine Booster</div>
+            </div>
+            <div style="text-align: right;">
+              <span class="tag tag-red">High Priority</span>
+              <div style="font-weight: 700; font-size: 0.8rem; margin-top: 2px;">2026-02-18</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; padding: 0.65rem 0.85rem; background: var(--bg-body); border-radius: 8px; font-size: 0.85rem;">
+            <div>
+              <strong>Monthly Heartworm Chew</strong> - Luna (Dog)
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Preventative Medication</div>
+            </div>
+            <div style="text-align: right;">
+              <span class="tag tag-yellow">Medium Priority</span>
+              <div style="font-weight: 700; font-size: 0.8rem; margin-top: 2px;">2026-02-25</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; padding: 0.65rem 0.85rem; background: var(--bg-body); border-radius: 8px; font-size: 0.85rem;">
+            <div>
+              <strong>Avian UVB Lamp Bulb Replacement</strong> - Kiwi (Bird)
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Habitat Lighting Maintenance</div>
+            </div>
+            <div style="text-align: right;">
+              <span class="tag tag-yellow">Medium Priority</span>
+              <div style="font-weight: 700; font-size: 0.8rem; margin-top: 2px;">2026-03-15</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="text-align: center; font-size: 0.85rem; color: #64748b;">
+      &copy; 2026 PetCare360 Platform. AI suggestions are non-diagnostic wellness guidelines.
+    </div>
+  </footer>
+
+  <script>
+    function updateAiPet() {
+      var val = document.getElementById("petSelect").value;
+      var title = document.getElementById("aiPetTitle");
+      var sub = document.getElementById("aiPetSubtitle");
+
+      if (val === "milo") {
+        title.innerText = "AI Wellness Routine for Milo";
+        sub.innerText = "British Shorthair Cat • Weight: 5.2 kg • Indoor Hydration Focus";
+      } else if (val === "bella") {
+        title.innerText = "AI Wellness Routine for Bella";
+        sub.innerText = "French Bulldog • Senior 5.0 yrs • Joint & Airway Care";
+      } else if (val === "kiwi") {
+        title.innerText = "AI Wellness Routine for Kiwi";
+        sub.innerText = "Lutino Cockatiel Bird • Weight: 92g • Avian Pellets & Foraging";
+      } else {
+        title.innerText = "AI Wellness Routine for Luna";
+        sub.innerText = "Golden Retriever • Weight: 29.5 kg • Active Lifestyle";
+      }
+    }
+  </script>
+
+</body>
+</html>

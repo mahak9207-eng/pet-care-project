@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 1: Pet Care Dashboard - PetCare360</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       1. HEADER & NAVIGATION BAR
+  ======================================================== -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <!-- Website Logo -->
+      <a href="1-dashboard.html" class="nav-logo">
+        <div class="logo-badge">🐾</div>
+        <span>PetCare<strong>360</strong></span>
+      </a>
+
+      <!-- Navigation Links to all 5 Pages -->
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="1-dashboard.html" class="active">🏠 Dashboard</a></li>
+        <li class="nav-item"><a href="2-clinics.html">🏥 Vet Clinics</a></li>
+        <li class="nav-item"><a href="3-pets.html">🐶 Pet Profiles <span class="badge-pill">4</span></a></li>
+        <li class="nav-item"><a href="4-appointments.html">📅 Appointments <span class="badge-pill badge-amber">4 Due</span></a></li>
+        <li class="nav-item"><a href="5-ai-insights.html">✨ AI Insights</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; gap: 0.5rem;">
+        <a href="3-pets.html" class="btn btn-outline">+ Add Pet</a>
+        <a href="4-appointments.html" class="btn btn-primary">Book Visit</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       2. HERO SECTION (Welcome Banner & Stats)
+  ======================================================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <!-- Left: Headline & Introduction -->
+      <div>
+        <span class="hero-tag">✨ Smart Pet Care Ecosystem</span>
+        <h1 class="hero-title">
+          Complete Health, Clinic & <span>Care Routine</span> Hub
+        </h1>
+        <p class="hero-desc">
+          Manage multi-species health records, schedule appointments with verified veterinarians, and receive intelligent AI routine suggestions for your pets.
+        </p>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="4-appointments.html" class="btn btn-primary" style="background: #5eead4; color: #042f2e;">📅 Book Clinic Visit</a>
+          <a href="3-pets.html" class="btn btn-outline" style="color: white; border-color: white;">🐾 View Pet Profiles</a>
+        </div>
+      </div>
+
+      <!-- Right: Quick Household Care Stats -->
+      <div class="hero-stats-box">
+        <h3 style="margin-bottom: 1rem; color: white;">📊 Household Summary</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Registered Pets</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Partner Clinics</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" style="color: #fde047;">4</div>
+            <div class="stat-label">Due Reminders</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" style="color: #a7f3d0;">2</div>
+            <div class="stat-label">Active Bookings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- ========================================================
+         3. SPECIES CATEGORIES EXPLORER (Task 1)
+    ======================================================== -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Species Care Categories</h2>
+          <p class="section-sub">Select your companion species to review tailored care guides, diet tips & lifespans.</p>
+        </div>
+        <a href="3-pets.html" class="btn btn-secondary">View All Pets &rarr;</a>
+      </div>
+
+      <div class="grid-3">
+        <!-- Species 1: Dogs -->
+        <div class="card">
+          <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🐕</div>
+          <span class="tag tag-teal">Lifespan: 10 - 15 Yrs</span>
+          <h3 style="margin: 0.5rem 0;">Canine Care (Dogs)</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            Vaccination schedules, active 45-60 min daily exercise, high-protein nutrition & bi-annual dental hygiene.
+          </p>
+          <a href="3-pets.html" class="btn btn-outline" style="width: 100%;">View Dog Profiles</a>
+        </div>
+
+        <!-- Species 2: Cats -->
+        <div class="card">
+          <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🐈</div>
+          <span class="tag tag-teal">Lifespan: 12 - 18 Yrs</span>
+          <h3 style="margin: 0.5rem 0;">Feline Care (Cats)</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            Urinary health management, fresh water fountains, daily litter cleaning & indoor scratching outlets.
+          </p>
+          <a href="3-pets.html" class="btn btn-outline" style="width: 100%;">View Cat Profiles</a>
+        </div>
+
+        <!-- Species 3: Birds -->
+        <div class="card">
+          <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🦜</div>
+          <span class="tag tag-teal">Lifespan: 8 - 25 Yrs</span>
+          <h3 style="margin: 0.5rem 0;">Avian Care (Birds)</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            Organic pellet nutrition over pure seed, non-toxic PTFE cookware home safety & daily flight enrichment.
+          </p>
+          <a href="3-pets.html" class="btn btn-outline" style="width: 100%;">View Bird Profiles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. VETERINARY SERVICE HIGHLIGHTS (Task 1)
+    ======================================================== -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Veterinary Service Highlights</h2>
+          <p class="section-sub">Comprehensive clinical, diagnostic, and wellness care solutions across our network.</p>
+        </div>
+        <a href="2-clinics.html" class="btn btn-secondary">Find Clinics &rarr;</a>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag tag-red">24 Hours / 7 Days</span>
+          <h3 style="margin: 0.5rem 0;">🚑 24/7 Emergency Care</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+            Intensive care unit with trauma stabilization, oxygen therapy, and emergency surgical capabilities.
+          </p>
+          <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">Est. Fee: $120 - $350</div>
+        </div>
+
+        <div class="card">
+          <span class="tag tag-green">Mon - Sat</span>
+          <h3 style="margin: 0.5rem 0;">🛡️ General Wellness & Vaccines</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+            Nose-to-tail physical exams, core Rabies & DHPP/FVRCP vaccines, and microchipping.
+          </p>
+          <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">Est. Fee: $55 - $95</div>
+        </div>
+
+        <div class="card">
+          <span class="tag tag-blue">Dental Suite</span>
+          <h3 style="margin: 0.5rem 0;">✨ Advanced Dental Scaling</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+            Ultrasonic sub-gingival scaling, dental x-rays, and polishing to stop periodontal bone loss.
+          </p>
+          <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">Est. Fee: $180 - $450</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. CARE RESOURCES & ARTICLES
+    ======================================================== -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Veterinary Care Articles & Guides</h2>
+          <p class="section-sub">Evidence-based advice written by board-certified veterinarians.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag tag-teal">Preventive Health &bull; 4 min read</span>
+          <h3 style="margin: 0.5rem 0;">Essential Puppy & Kitten Vaccination Timelines</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Core vaccines should be initiated at 8 weeks and repeated every 3-4 weeks until 16 weeks to ensure maternal antibody protection is replaced with active immunity.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="tag tag-red">Emergency & Safety &bull; 6 min read</span>
+          <h3 style="margin: 0.5rem 0;">Toxic Foods: What Pets Must Never Ingest</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Xylitol, onions, garlic, grapes, raisins, and dark chocolate trigger acute renal failure and rapid hypoglycemic shock. Keep poison control hotlines handy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       6. FOOTER SECTION
+  ======================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 style="color: white; margin-bottom: 0.75rem;">🐾 PetCare360</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6;">
+            A complete pet-care and veterinary clinic platform connecting pet owners with medical routines, clinic slots, and AI wellness analytics.
+          </p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul class="footer-links">
+            <li><a href="1-dashboard.html">Dashboard</a></li>
+            <li><a href="2-clinics.html">Vet Clinics</a></li>
+            <li><a href="3-pets.html">Pet Profiles</a></li>
+            <li><a href="4-appointments.html">Appointments</a></li>
+            <li><a href="5-ai-insights.html">AI Insights</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Emergency</h4>
+          <ul class="footer-links">
+            <li>24/7 Hotline: 1-800-PET-EMERG</li>
+            <li>Poison Control: 1-888-426-4435</li>
+          </ul>
+        </div>
+      </div>
+      <div style="text-align: center; font-size: 0.85rem; color: #64748b;">
+        &copy; 2026 PetCare360 Platform. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
