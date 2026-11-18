@@ -62,8 +62,8 @@ function AppContent() {
     petId: '',
     date: new Date().toISOString().split('T')[0],
     category: 'Routine Physical Exam',
-    clinic: 'Metropolitan Veterinary Hospital',
-    veterinarian: 'Dr. Sarah Mitchell',
+    clinic: 'Metropolitan Veterinary Hospital & 24/7 Trauma Care',
+    veterinarian: 'Dr. Rajesh Sharma, MVSc',
     weight: '15',
     temperature: '101.5 °F',
     heartRate: '92 bpm',
@@ -244,7 +244,7 @@ function AppContent() {
               <input
                 type="text"
                 className="form-input"
-                placeholder="e.g. Copper, Bella, Ziggy"
+                placeholder="e.g. Sheru, Simba, Rocky, Bruno"
                 value={petForm.name}
                 onChange={(e) => setPetForm({ ...petForm, name: e.target.value })}
                 required

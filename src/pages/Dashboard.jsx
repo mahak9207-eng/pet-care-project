@@ -375,7 +375,7 @@ export const Dashboard = ({ onOpenAddPetModal, onOpenBookingModal }) => {
                 >
                   <div>
                     <span style={{ fontSize: '0.8rem', color: 'var(--text-light)' }}>Consultation Fee: </span>
-                    <strong style={{ fontSize: '1.1rem', color: 'var(--text-main)' }}>${clinic.consultationFee}</strong>
+                    <strong style={{ fontSize: '1.1rem', color: 'var(--text-main)' }}>₹{clinic.consultationFee}</strong>
                   </div>
                   <button
                     className="btn btn-primary btn-sm"

@@ -17,10 +17,10 @@ import {
 const PetCareContext = createContext();
 
 const LOCAL_STORAGE_KEYS = {
-  PETS: 'petcare_pets_v1',
-  APPOINTMENTS: 'petcare_appointments_v1',
-  REMINDERS: 'petcare_reminders_v1',
-  HEALTH_RECORDS: 'petcare_health_records_v1'
+  PETS: 'petcare_pets_v2',
+  APPOINTMENTS: 'petcare_appointments_v2',
+  REMINDERS: 'petcare_reminders_v2',
+  HEALTH_RECORDS: 'petcare_health_records_v2'
 };
 
 export const PetCareProvider = ({ children }) => {
@@ -97,7 +97,7 @@ export const PetCareProvider = ({ children }) => {
       color: newPetData.color || 'Standard',
       avatar: newPetData.avatar || 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=400&q=80',
       microchipId: newPetData.microchipId || `985-${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(1000 + Math.random() * 9000)}`,
-      primaryVet: newPetData.primaryVet || 'Metropolitan Veterinary Hospital',
+      primaryVet: newPetData.primaryVet || 'Metropolitan Veterinary Hospital (Delhi NCR)',
       allergies: newPetData.allergies ? newPetData.allergies.split(',').map(s => s.trim()) : ['None recorded'],
       preferences: newPetData.preferences ? newPetData.preferences.split(',').map(s => s.trim()) : ['Friendly, gentle temperament'],
       careRoutines: {
@@ -147,8 +147,8 @@ export const PetCareProvider = ({ children }) => {
       petName: pet ? pet.name : recordData.petName || 'Pet',
       date: recordData.date || new Date().toISOString().split('T')[0],
       category: recordData.category || 'General Health Check',
-      clinic: recordData.clinic || 'Metropolitan Veterinary Hospital',
-      veterinarian: recordData.veterinarian || 'Dr. Sarah Mitchell',
+      clinic: recordData.clinic || 'Metropolitan Veterinary Hospital & 24/7 Trauma Care',
+      veterinarian: recordData.veterinarian || 'Dr. Rajesh Sharma, MVSc',
       vitalStats: {
         weight: recordData.weight ? `${recordData.weight} kg` : (pet ? pet.weight : 'Normal'),
         temperature: recordData.temperature || '101.5 °F',

@@ -218,7 +218,7 @@ export const VetDirectory = ({ onOpenBookingModalWithClinic }) => {
                     <div>
                       <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-light)', fontWeight: 700 }}>Consultation Fee</div>
                       <div style={{ fontWeight: 700, color: 'var(--primary)', marginTop: '2px', fontSize: '1.1rem' }}>
-                        ${clinic.consultationFee} <span style={{ fontSize: '0.75rem', fontWeight: 400, color: 'var(--text-muted)' }}>/ initial consult</span>
+                        ₹{clinic.consultationFee} <span style={{ fontSize: '0.75rem', fontWeight: 400, color: 'var(--text-muted)' }}>/ initial consult</span>
                       </div>
                     </div>
                   </div>

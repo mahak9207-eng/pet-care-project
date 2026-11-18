@@ -47,10 +47,10 @@
       <div>
         <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-right: 0.5rem;">Analyze Pet:</label>
         <select id="petSelect" class="filter-select" onchange="updateAiPet()" style="font-weight: 700; border-color: var(--primary);">
-          <option value="luna">Luna (Dog &bull; 3.5 yrs)</option>
-          <option value="milo">Milo (Cat &bull; 2.0 yrs)</option>
-          <option value="bella">Bella (Dog &bull; Senior 5.0 yrs)</option>
-          <option value="kiwi">Kiwi (Bird &bull; 1.5 yrs)</option>
+          <option value="sheru">Sheru (Dog &bull; 3.5 yrs)</option>
+          <option value="simba">Simba (Cat &bull; 2.0 yrs)</option>
+          <option value="rocky">Rocky (Pug &bull; Senior 5.0 yrs)</option>
+          <option value="mitthu">Mitthu (Bird &bull; 1.5 yrs)</option>
         </select>
       </div>
     </div>
@@ -67,7 +67,7 @@
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
         <div>
           <span class="tag tag-teal">Life Stage: Adult Canine</span>
-          <h2 id="aiPetTitle" style="margin-top: 0.35rem;">AI Wellness Routine for Luna</h2>
+          <h2 id="aiPetTitle" style="margin-top: 0.35rem;">AI Wellness Routine for Sheru</h2>
           <p id="aiPetSubtitle" style="color: var(--text-muted); font-size: 0.9rem;">Golden Retriever &bull; Weight: 29.5 kg &bull; Active Lifestyle</p>
         </div>
 
@@ -198,7 +198,7 @@
         <div style="display: flex; flex-direction: column; gap: 0.75rem;">
           <div style="padding: 0.75rem; background: var(--bg-body); border-radius: 8px;">
             <div style="display: flex; justify-content: space-between;">
-              <strong>Metropolitan Veterinary Hospital</strong>
+              <strong>Metropolitan Veterinary Hospital (Delhi NCR)</strong>
               <span class="tag tag-teal">36% Share</span>
             </div>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
@@ -208,7 +208,7 @@
 
           <div style="padding: 0.75rem; background: var(--bg-body); border-radius: 8px;">
             <div style="display: flex; justify-content: space-between;">
-              <strong>Paws & Whiskers Holistic Center</strong>
+              <strong>Paws & Whiskers Holistic Clinic (Mumbai)</strong>
               <span class="tag tag-teal">25% Share</span>
             </div>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
@@ -218,7 +218,7 @@
 
           <div style="padding: 0.75rem; background: var(--bg-body); border-radius: 8px;">
             <div style="display: flex; justify-content: space-between;">
-              <strong>Oakwood Animal Dental & Surgical</strong>
+              <strong>Apex Animal Dental & Surgical (Jaipur)</strong>
               <span class="tag tag-teal">21% Share</span>
             </div>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
@@ -327,17 +327,17 @@
       var title = document.getElementById("aiPetTitle");
       var sub = document.getElementById("aiPetSubtitle");
 
-      if (val === "milo") {
-        title.innerText = "AI Wellness Routine for Milo";
-        sub.innerText = "British Shorthair Cat • Weight: 5.2 kg • Indoor Hydration Focus";
-      } else if (val === "bella") {
-        title.innerText = "AI Wellness Routine for Bella";
-        sub.innerText = "French Bulldog • Senior 5.0 yrs • Joint & Airway Care";
-      } else if (val === "kiwi") {
-        title.innerText = "AI Wellness Routine for Kiwi";
-        sub.innerText = "Lutino Cockatiel Bird • Weight: 92g • Avian Pellets & Foraging";
+      if (val === "simba") {
+        title.innerText = "AI Wellness Routine for Simba";
+        sub.innerText = "Indian Domestic Cat • Weight: 4.8 kg • Indoor Hydration Focus";
+      } else if (val === "rocky") {
+        title.innerText = "AI Wellness Routine for Rocky";
+        sub.innerText = "Pug Dog • Senior 5.0 yrs • Joint & Airway Care";
+      } else if (val === "mitthu") {
+        title.innerText = "AI Wellness Routine for Mitthu";
+        sub.innerText = "Lutino Cockatiel Bird • Weight: 92g • Organic Pellets & Foraging";
       } else {
-        title.innerText = "AI Wellness Routine for Luna";
+        title.innerText = "AI Wellness Routine for Sheru";
         sub.innerText = "Golden Retriever • Weight: 29.5 kg • Active Lifestyle";
       }
     }

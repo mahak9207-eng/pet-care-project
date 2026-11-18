@@ -68,10 +68,9 @@
       <!-- Location Dropdown -->
       <select id="locationSelect" class="filter-select" onchange="filterClinics()">
         <option value="all">Location: All Cities</option>
-        <option value="Downtown">Downtown Metro</option>
-        <option value="Westside">Westside Heights</option>
-        <option value="North">North Suburbs</option>
-        <option value="Oakwood">Oakwood Park</option>
+        <option value="Delhi">Delhi NCR</option>
+        <option value="Mumbai">Mumbai West</option>
+        <option value="Bengaluru">Bengaluru South</option>
       </select>
     </div>
 
@@ -81,20 +80,20 @@
     <div id="clinicsList" style="display: flex; flex-direction: column; gap: 1.5rem;">
 
       <!-- Clinic 1 -->
-      <div class="card clinic-card" data-specialty="Emergency Surgery" data-location="Downtown">
+      <div class="card clinic-card" data-specialty="Emergency Surgery" data-location="Delhi">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
           <div>
             <span class="tag tag-red">Premier Emergency Center</span>
             <span class="tag tag-yellow">⭐ 4.9 (342 reviews)</span>
-            <h2 style="margin: 0.4rem 0;">Metropolitan Veterinary Hospital & 24/7 ER</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">📍 452 Grand Boulevard, Suite 100, Downtown Metro</p>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">👨‍⚕️ Lead Clinician: <strong>Dr. Sarah Mitchell, DVM, DACVECC</strong></p>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">🕒 Open: <strong>24 Hours / 7 Days</strong> &bull; 📞 Phone: <strong>(555) 234-8900</strong></p>
+            <h2 style="margin: 0.4rem 0;">Metropolitan Veterinary Hospital & 24/7 Trauma Care</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">📍 452 Barakhamba Road, Connaught Place, New Delhi</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">👨‍⚕️ Lead Clinician: <strong>Dr. Rajesh Sharma, MVSc, DACVECC</strong></p>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">🕒 Open: <strong>24 Hours / 7 Days</strong> &bull; 📞 Phone: <strong>+91 98112 34890</strong></p>
           </div>
 
           <div style="text-align: right;">
             <div style="font-size: 0.8rem; color: var(--text-muted);">Consultation Fee</div>
-            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">$75</div>
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">₹750</div>
           </div>
         </div>
 
@@ -120,20 +119,20 @@
       </div>
 
       <!-- Clinic 2 -->
-      <div class="card clinic-card" data-specialty="Dermatology Dentistry" data-location="Westside">
+      <div class="card clinic-card" data-specialty="Dermatology Dentistry" data-location="Mumbai">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
           <div>
             <span class="tag tag-teal">Fear-Free Certified</span>
             <span class="tag tag-yellow">⭐ 4.8 (219 reviews)</span>
-            <h2 style="margin: 0.4rem 0;">Paws & Whiskers Holistic Wellness Center</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">📍 882 Evergreen Terrace, Westside Heights</p>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">👨‍⚕️ Lead Clinician: <strong>Dr. Julian Ross, DVM, CVA</strong></p>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">🕒 Open: <strong>Mon - Sat: 8:00 AM - 6:30 PM</strong> &bull; 📞 Phone: <strong>(555) 891-3421</strong></p>
+            <h2 style="margin: 0.4rem 0;">Paws & Whiskers Holistic Pet Clinic</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">📍 882 Hill Road, Bandra West, Mumbai</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">👨‍⚕️ Lead Clinician: <strong>Dr. Ananya Verma, BVSc & AH</strong></p>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">🕒 Open: <strong>Mon - Sat: 9:00 AM - 7:00 PM</strong> &bull; 📞 Phone: <strong>+91 98201 89134</strong></p>
           </div>
 
           <div style="text-align: right;">
             <div style="font-size: 0.8rem; color: var(--text-muted);">Consultation Fee</div>
-            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">$65</div>
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">₹600</div>
           </div>
         </div>
 
@@ -157,20 +156,20 @@
       </div>
 
       <!-- Clinic 3 -->
-      <div class="card clinic-card" data-specialty="Exotics Surgery" data-location="North">
+      <div class="card clinic-card" data-specialty="Exotics Surgery" data-location="Bengaluru">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
           <div>
             <span class="tag tag-blue">Specialist Avian & Exotic Facility</span>
             <span class="tag tag-yellow">⭐ 4.95 (184 reviews)</span>
-            <h2 style="margin: 0.4rem 0;">Advanced Avian & Exotic Animal Clinic</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">📍 312 Falcon Ridge Road, North Suburbs</p>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">👨‍⚕️ Lead Clinician: <strong>Dr. Kimberly Vance, MS, DVM (Exotics)</strong></p>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">🕒 Open: <strong>Mon - Fri: 8:30 AM - 5:30 PM</strong> &bull; 📞 Phone: <strong>(555) 672-9988</strong></p>
+            <h2 style="margin: 0.4rem 0;">All-India Avian & Exotic Animal Hospital</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">📍 312 100 Feet Road, Indiranagar, Bengaluru</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">👨‍⚕️ Lead Clinician: <strong>Dr. Vikram Patel, MVSc (Avian Specialist)</strong></p>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">🕒 Open: <strong>Mon - Fri: 9:00 AM - 6:00 PM</strong> &bull; 📞 Phone: <strong>+91 98450 67299</strong></p>
           </div>
 
           <div style="text-align: right;">
             <div style="font-size: 0.8rem; color: var(--text-muted);">Consultation Fee</div>
-            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">$85</div>
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">₹850</div>
           </div>
         </div>
 
