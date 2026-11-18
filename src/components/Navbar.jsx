@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import {
   PawPrint,
   Home,
@@ -16,33 +16,32 @@ import { usePetCare } from '../context/PetCareContext';
 
 export const Navbar = ({ onOpenAddPetModal, onOpenBookingModal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { pets, appointments, reminders } = usePetCare();
-  const navigate = useNavigate();
+  const { pets, reminders } = usePetCare();
 
   const pendingRemindersCount = reminders.filter(r => !r.completed).length;
 
   const navLinks = [
-    { to: '/', label: 'Dashboard', icon: Home, badge: null },
-    { to: '/clinics', label: 'Vet Clinics', icon: Building2, badge: null },
-    { to: '/pets', label: 'Pet Profiles', icon: BookHeart, badge: `${pets.length} Pets` },
-    { to: '/appointments', label: 'Appointments & Reminders', icon: CalendarCheck2, badge: pendingRemindersCount > 0 ? `${pendingRemindersCount} Due` : null },
-    { to: '/ai-insights', label: 'AI Pet Insights', icon: Sparkles, badge: 'AI Powered', badgeTeal: true }
+    { to: '/', label: 'Dashboard', icon: Home, count: null },
+    { to: '/clinics', label: 'Vet Clinics', icon: Building2, count: null },
+    { to: '/pets', label: 'Pet Profiles', icon: BookHeart, count: pets.length, countType: 'teal' },
+    { to: '/appointments', label: 'Appointments', icon: CalendarCheck2, count: pendingRemindersCount > 0 ? pendingRemindersCount : null, countType: 'amber' },
+    { to: '/ai-insights', label: 'AI Insights', icon: Sparkles, count: 'AI', countType: 'ai' }
   ];
 
   return (
     <nav className="navbar">
-      <div className="container nav-inner">
-        {/* Brand */}
+      <div className="nav-container nav-inner">
+        {/* Brand Logo */}
         <Link to="/" className="nav-brand" onClick={() => setMobileMenuOpen(false)}>
           <div className="brand-icon-box">
-            <PawPrint size={24} />
+            <PawPrint size={22} />
           </div>
-          <div>
-            PetCare<span>360</span>
-          </div>
+          <span className="brand-text">
+            PetCare<span className="brand-highlight">360</span>
+          </span>
         </Link>
 
-        {/* Desktop Links */}
+        {/* Desktop Navigation Links */}
         <ul className="nav-links">
           {navLinks.map((item) => {
             const Icon = item.icon;
@@ -52,11 +51,11 @@ export const Navbar = ({ onOpenAddPetModal, onOpenBookingModal }) => {
                   to={item.to}
                   className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                 >
-                  <Icon size={18} />
-                  <span>{item.label}</span>
-                  {item.badge && (
-                    <span className={`badge ${item.badgeTeal ? 'badge-teal' : 'badge-warning'}`} style={{ padding: '2px 6px', fontSize: '0.7rem' }}>
-                      {item.badge}
+                  <Icon size={17} className="nav-icon" />
+                  <span className="nav-label">{item.label}</span>
+                  {item.count !== null && item.count !== undefined && (
+                    <span className={`nav-count-badge ${item.countType}`}>
+                      {item.count}
                     </span>
                   )}
                 </NavLink>
@@ -65,72 +64,62 @@ export const Navbar = ({ onOpenAddPetModal, onOpenBookingModal }) => {
           })}
         </ul>
 
-        {/* Actions */}
+        {/* Action Buttons */}
         <div className="nav-actions">
           <button
-            className="btn btn-outline btn-sm"
+            className="btn btn-outline btn-sm nav-btn"
             onClick={onOpenAddPetModal}
             title="Register a new pet profile"
           >
-            <PlusCircle size={16} />
+            <PlusCircle size={15} />
             <span>Add Pet</span>
           </button>
 
           <button
-            className="btn btn-primary btn-sm"
+            className="btn btn-primary btn-sm nav-btn"
             onClick={onOpenBookingModal}
             title="Book a demonstration vet appointment"
           >
-            <Clock size={16} />
+            <Clock size={15} />
             <span>Book Visit</span>
           </button>
 
-          {/* Mobile hamburger button */}
+          {/* Mobile Menu Hamburger */}
           <button
             className="mobile-menu-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div
-          style={{
-            background: 'white',
-            borderBottom: '1px solid var(--border-color)',
-            padding: '1rem 1.25rem',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.5rem'
-          }}
-        >
+        <div className="mobile-drawer">
           {navLinks.map((item) => {
             const Icon = item.icon;
             return (
               <NavLink
                 key={item.to}
                 to={item.to}
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                className={({ isActive }) => `nav-link mobile-nav-link ${isActive ? 'active' : ''}`}
                 onClick={() => setMobileMenuOpen(false)}
-                style={{ justifyContent: 'space-between' }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                   <Icon size={18} />
                   <span>{item.label}</span>
                 </div>
-                {item.badge && (
-                  <span className={`badge ${item.badgeTeal ? 'badge-teal' : 'badge-warning'}`}>
-                    {item.badge}
+                {item.count !== null && item.count !== undefined && (
+                  <span className={`nav-count-badge ${item.countType}`}>
+                    {item.count}
                   </span>
                 )}
               </NavLink>
             );
           })}
-          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid var(--border-color)' }}>
+          <div className="mobile-drawer-actions">
             <button
               className="btn btn-outline btn-sm"
               style={{ flex: 1 }}
